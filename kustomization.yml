@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+secretGenerator:
+    - name: mysecure
+      literals:
+        - rootpass=redhat
+        - userpass=redhat
+resources:
+   - efs-provisioner.yml
+   - rbac.yml
+   - sc.yml
+   - sqldeploy.yml
+   - wpsdeploy.yml
